@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>python requests详解 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一、前言1、requests简介requests是一个很实用的 Python HTTP客户端库 ，爬虫和测试服务器响应数据时经常会用到，它是python语言的第三方的库，专门&amp;#x3D;&amp;#x3D;,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="python requests详解 - Hexo"/>
+    <meta name="twitter:description" content="一、前言1、requests简介requests是一个很实用的 Python HTTP客户端库 ，爬虫和测试服务器响应数据时经常会用到，它是python语言的第三方的库，专门&amp;#x3D;&amp;#x3D;,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="python requests详解 - Hexo"/>
+    <meta property="og:description" content="一、前言1、requests简介requests是一个很实用的 Python HTTP客户端库 ，爬虫和测试服务器响应数据时经常会用到，它是python语言的第三方的库，专门&amp;#x3D;&amp;#x3D;,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://ustinian-blog.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">python requests详解</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">python requests详解</h1>
+        <div class="stuff">
+            <span>十一月 20, 2024</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><h3 id="1、requests简介"><a href="#1、requests简介" class="headerlink" title="1、requests简介"></a>1、requests简介</h3><p>requests是一个很实用的 Python HTTP客户端库 ，爬虫和测试服务器响应数据时经常会用到，它是python语言的第三方的库，专门&#x3D;&#x3D;用于发送HTTP请求&#x3D;&#x3D;，使用起来比<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=urllib&spm=1001.2101.3001.7020">urllib</a>更简洁也更强大。</p>
+<h3 id="2-requests-安装"><a href="#2-requests-安装" class="headerlink" title="2. requests 安装"></a>2. requests 安装</h3><p>这里我直接在windows系统的系统命令行中安装，（python的版本是python3)，</p>
+<blockquote>
+<p>pip3 install requests</p>
+</blockquote>
+<h2 id="二、常用方法"><a href="#二、常用方法" class="headerlink" title="二、常用方法"></a>二、常用方法</h2><table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">requests.request(url)</td>
+<td align="center">构造一个请求，支持以下各种方法</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">requests.get()</td>
+<td align="center">发送一个get请求</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">requests.post()</td>
+<td align="center">发送一个post请求</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">requests.header()</td>
+<td align="center">获取该HTML的头部信息</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">requests.put()</td>
+<td align="center">发送put请求</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">requests.patch()</td>
+<td align="center">提交局部修改的请求</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">requests.delete()</td>
+<td align="center">提交删除请求</td>
+</tr>
+</tbody></table>
+<h2 id="三、常用属性或方法"><a href="#三、常用属性或方法" class="headerlink" title="三、常用属性或方法"></a>三、常用属性或方法</h2><table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">属性或方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">response.status_code</td>
+<td align="center">响应状态码</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">response.content</td>
+<td align="center">把response对象转换为二进制数据</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">response.text</td>
+<td align="center">把response对象转换为字符串数据</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">response.encoding</td>
+<td align="center">定义response对象的编码</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">response.cookie</td>
+<td align="center">获取请求后的cookie</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">response.url</td>
+<td align="center">获取请求网址</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">response.json()</td>
+<td align="center">内置的 JSON 解码器</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">Response.headers</td>
+<td align="center">以字典对象存储服务器响应头，字典键不区分大小写</td>
+</tr>
+</tbody></table>
+<h2 id="四、发送请求"><a href="#四、发送请求" class="headerlink" title="四、发送请求"></a>四、发送请求</h2><h3 id="1-发送get请求"><a href="#1-发送get请求" class="headerlink" title="1.发送get请求"></a>1.发送get请求</h3><p>1.不带参数的请求</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">#定义百度URL，获取百度页面HTML</span><br><span class="line">url=&quot;http://www.baidu.com&quot;</span><br><span class="line"></span><br><span class="line">#使用get发送请求</span><br><span class="line">res=response.get(url)</span><br><span class="line"></span><br><span class="line">#将返回对象的二进制数据进行解码并输出</span><br><span class="line">print(res.content.decode(&quot;UTF-8&quot;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>2.带参数的请求</p>
+<ul>
+<li>将参数放在url中进行请求</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">#将参数name和age放在get请求中</span><br><span class="line">res=requests.get(&quot;http://httpbin.org/get?name=gemey&amp;age=22&quot;)</span><br><span class="line"></span><br><span class="line">#输出返回对象的文本结果</span><br><span class="line">print(res.text)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将参数放在字典中进行请求</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">#将参数name和age定义到字典params里</span><br><span class="line">params&#123;</span><br><span class="line">	&quot;name&quot;:&quot;tony&quot;,</span><br><span class="line">	&quot;age&quot;:18</span><br><span class="line">&#125;</span><br><span class="line">url=&quot;http://www.baidu.com&quot;</span><br><span class="line"></span><br><span class="line">#发送请求</span><br><span class="line">res=request.get(url=url,params=params)</span><br><span class="line"></span><br><span class="line">#输出返回对象的文本结果</span><br><span class="line">print(res.text)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自定义HTML头进行请求</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">#将参数写入字典内</span><br><span class="line">params=&#123;</span><br><span class="line">	&quot;name&quot;=&quot;tony&quot;,</span><br><span class="line">	&quot;age&quot;=20</span><br><span class="line">&#125;</span><br><span class="line">#定义HTTP头信息</span><br><span class="line">hearders=&#123;</span><br><span class="line">	&quot;Urser-agent&quot;:&quot;Mozilla/5.0 (Linux; Android 8.1.0; SM-P585Y) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36&quot;,</span><br><span class="line">	&quot;referer&quot;:&quot;https://www.abidu.com&quot;,</span><br><span class="line">	&quot;Cookie&quot;:&quot;12345678&quot;</span><br><span class="line">	&#125;</span><br><span class="line">#发送请求参数</span><br><span class="line">url=&quot;https://www.abidu.com&quot;</span><br><span class="line">#发送请求参数</span><br><span class="line">res=requests.get(url=url,params=params,headers=headers)</span><br><span class="line">#输出返回对象的文本结果</span><br><span class="line">print(res.text)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-发送post请求"><a href="#2-发送post请求" class="headerlink" title="2.发送post请求"></a>2.发送post请求</h3><p>post请求用于提交参数，所以直接进行带有参数的post请求参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">#将参数写入字典内</span><br><span class="line">params=&#123;</span><br><span class="line">	&quot;name&quot;=&quot;tony&quot;,</span><br><span class="line">	&quot;age&quot;=20</span><br><span class="line">&#125;</span><br><span class="line">#定义HTTP头信息</span><br><span class="line">hearders=&#123;</span><br><span class="line">	&quot;Urser-agent&quot;:&quot;Mozilla/5.0 (Linux; Android 8.1.0; SM-P585Y) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36&quot;,</span><br><span class="line">	&quot;referer&quot;:&quot;https://www.abidu.com&quot;,</span><br><span class="line">	&quot;Cookie&quot;:&quot;12345678&quot;</span><br><span class="line">	&#125;</span><br><span class="line">#发送请求参数</span><br><span class="line">url=&quot;https://www.abidu.com&quot;</span><br><span class="line">#发送请求参数</span><br><span class="line">res=requests.post(url=url,params=params,headers=headers)</span><br><span class="line">#输出返回对象的文本结果</span><br><span class="line">print(res.text)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="五、读取内容"><a href="#五、读取内容" class="headerlink" title="五、读取内容"></a>五、读取内容</h2><p>大部分情况下，我们可以直接使用text输出返回内容，但是当有中文的情况下，使用text会出现乱码的情况。</p>
+<p>上面提到了，content和text的区别在于content存储的是字节码，而text存储的是Beautifulsoup模块根据猜测的编码方式将content内容解码后的结果。</p>
+<p>所以要解决text乱码的问题，就需要&#x3D;&#x3D;使用content对象手动解码&#x3D;&#x3D;后才能显示</p>
+<h3 id="1-以content方式读取"><a href="#1-以content方式读取" class="headerlink" title="1.以content方式读取"></a>1.以content方式读取</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url=&quot;http://www.baidu.com&quot;</span><br><span class="line">res=requests.get(url)</span><br><span class="line">#不进行解码，直接输出</span><br><span class="line">print(res.content)</span><br><span class="line">#进行解码</span><br><span class="line">print(res.content.decode(&quot;UTF-8&quot;))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-以text方式读取"><a href="#2-以text方式读取" class="headerlink" title="2.以text方式读取"></a>2.以text方式读取</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url=&quot;http://www.baidu.com&quot;</span><br><span class="line">res=requests.get(url)</span><br><span class="line">print(res.text)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：中文部分出现乱码</p>
+<h3 id="3-读取json数据"><a href="#3-读取json数据" class="headerlink" title="3.读取json数据"></a>3.读取json数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">#将参数写入字典内</span><br><span class="line">params=&#123;</span><br><span class="line">	&quot;name&quot;=&quot;tony&quot;,</span><br><span class="line">	&quot;age&quot;=20</span><br><span class="line">&#125;</span><br><span class="line">#定义HTTP头信息</span><br><span class="line">hearders=&#123;</span><br><span class="line">	&quot;Urser-agent&quot;:&quot;Mozilla/5.0 (Linux; Android 8.1.0; SM-P585Y) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36&quot;,</span><br><span class="line">	&quot;referer&quot;:&quot;https://www.abidu.com&quot;,</span><br><span class="line">	&quot;Cookie&quot;:&quot;12345678&quot;</span><br><span class="line">	&#125;</span><br><span class="line">#发送请求参数</span><br><span class="line">url=&quot;https://www.abidu.com&quot;</span><br><span class="line">#发送请求参数</span><br><span class="line">res=requests.get(url=url,params=params,headers=headers)</span><br><span class="line">#输出返回对象的文本结果</span><br><span class="line">print(res.text)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>json是一种文本格式， 使用键值对的形式组织数据，数据之间使用逗号 <code>,</code> 分隔</p>
+</blockquote>
+<h3 id="4-读取cookies"><a href="#4-读取cookies" class="headerlink" title="4.读取cookies"></a>4.读取cookies</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url=&quot;http://www.baidu.com&quot;</span><br><span class="line">res=requests.get(url)</span><br><span class="line">#这里直接使用cookies返回的是RequestcookiesJar对象，所以需用再用extract_cookies对象对该对象进行解析</span><br><span class="line">print(res.cookies.extract_cookies)</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、其他方法"><a href="#六、其他方法" class="headerlink" title="六、其他方法"></a>六、其他方法</h2><h3 id="1-设置超时报错"><a href="#1-设置超时报错" class="headerlink" title="1.设置超时报错"></a>1.<strong>设置超时报错</strong></h3><p>可以通过&#x3D;&#x3D;timeout属性&#x3D;&#x3D;设置<strong>超时时间</strong>，一旦超出这个时间还没得到响应内容，就会提示报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url=&quot;http://www.baidu.com&quot;</span><br><span class="line">#设置超时上线时间为1s</span><br><span class="line">res=requests.get(url=url,timeout=1)</span><br><span class="line">print(res.content.decode(UTF-8))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-处理异常"><a href="#2-处理异常" class="headerlink" title="2.处理异常"></a>2.处理异常</h3><p>当超过设定时间会出现报错，这时我们可以使用<a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1776589733040466083&wfr=spider&for=pc">try语句</a>处理异常</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url=&quot;http://www.baidu.com&quot;</span><br><span class="line"></span><br><span class="line">#使用try语句处理异常</span><br><span class="line">try:</span><br><span class="line"></span><br><span class="line">res=requests.get(url=url,timeout=1)</span><br><span class="line">print(res.content.decide(&quot;UTF-8&quot;))</span><br><span class="line"></span><br><span class="line">except exceptions.timeout as e:</span><br><span class="line">	print(e)</span><br><span class="line">except exceptions.HTTPError as e:</span><br><span class="line">	print(e)</span><br></pre></td></tr></table></figure>
+
+<p>到这里，你可能对expect expections as  e 有些疑惑，<a target="_blank" rel="noopener" href="https://wenku.csdn.net/answer/2cddbcf6868911ed9a8700163e34985e">请点击这里</a></p>
+<h3 id="3-设置代理"><a href="#3-设置代理" class="headerlink" title="3.设置代理"></a>3.设置代理</h3><p><strong>代理格式</strong>：proxies&#x3D;{‘协议’：’协议：&#x2F;&#x2F;IP：端口号’}</p>
+<p><strong>提示</strong>：当我们抓取的地址为http时，则设置http代理，反之则设置https</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url=&quot;http://www.baidu.com&quot;</span><br><span class="line"></span><br><span class="line">#使用字典定义代理</span><br><span class="line">proxies=&#123;</span><br><span class="line">	&#x27;http&#x27;:&#x27;http://123.45.67.76:8888&#x27;,</span><br><span class="line">	&#x27;http&#x27;:&#x27;http://123.45.67.76:4433&#x27;</span><br><span class="line">&#125;</span><br><span class="line">#使用try语句处理异常</span><br><span class="line">try:</span><br><span class="line"></span><br><span class="line">	res=requests.get(url=url,timeout=1,proxies=proxies)</span><br><span class="line">	print(res.content.decide(&quot;UTF-8&quot;))</span><br><span class="line"></span><br><span class="line">except exceptions.timeout as e:</span><br><span class="line">	print(e)</span><br><span class="line">except exceptions.HTTPError as e:</span><br><span class="line">	print(e)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-使用session进行会话控制"><a href="#4-使用session进行会话控制" class="headerlink" title="4.使用session进行会话控制"></a>4.使用session进行会话控制</h3><blockquote>
+<p>直接 requests.get() 或者 requests.post() 发送GET请求或POST请求；当然也是可以带上 cookies 和 headers 的，但这都是一次性请求，你这次带着cookies信息，后面的请求还得带。</p>
+<p>如果使用sessionl来发起请求，session实例在请求了一个网站后，对方服务器设置在本地的cookie会保存在session中，下一次再使用session请求对方服务器的时候，会带上前一次的cookie，从而实现回话保持。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">#使用session,需要先实例化一个对象</span><br><span class="line">session=requests.session()</span><br><span class="line"></span><br><span class="line">headers&#123;</span><br><span class="line">	 &#x27;User-Agent&#x27;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36&quot;,</span><br><span class="line">        &#x27;Referer&#x27;: &quot;https://creator.douyin.com/&quot;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">url=&#x27;https://sso.******.com/get_qrcode/?next=https:%2F%2Fcreator.douyin.com%2Fcreator-micro%2Fhome&amp;aid=2906&amp;service=https:%2F%2Fcreator.douyin.com&amp;is_vcd=1&amp;fp=ktv0uumo_gD7FPCuy_MfX7_44zL_9T1C_6i8sUgr4bDT6&#x27;</span><br><span class="line"></span><br><span class="line">data1=&#123;</span><br><span class="line">	&quot;name&quot;:&quot;test&quot;</span><br><span class="line">	&quot;passwd&quot;:&quot;passwd&quot;</span><br><span class="line">&#125;</span><br><span class="line">data2=&#123;</span><br><span class="line">	&quot;name&quot;:&quot;test&quot;,</span><br><span class="line">	&quot;age&quot;:20</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#使用session对象发起请求，进行登录</span><br><span class="line">try:</span><br><span class="line">	res=session.get(url=url,timeout=1,headers=headers,data=data1)</span><br><span class="line">	print(res.json())</span><br><span class="line">#使用的登录后的session对需要登录的操作再次发起请求。</span><br><span class="line">	res2=session.post(url,data=data2)</span><br><span class="line">except exceptions.timeout as e:</span><br><span class="line">	print(e)</span><br><span class="line">except exceptions.HTTPError as e:</span><br><span class="line">	print(e)</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
