@@ -19,6 +19,11 @@
 ]]></content>
   </entry>
   <entry>
+    <title>分类</title>
+    <url>/2024/11/20/categories/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>python requests详解</title>
     <url>/2024/11/20/python%20requests/</url>
     <content><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><h3 id="1、requests简介"><a href="#1、requests简介" class="headerlink" title="1、requests简介"></a>1、requests简介</h3><p>requests是一个很实用的 Python HTTP客户端库 ，爬虫和测试服务器响应数据时经常会用到，它是python语言的第三方的库，专门&#x3D;&#x3D;用于发送HTTP请求&#x3D;&#x3D;，使用起来比<a href="https://so.csdn.net/so/search?q=urllib&spm=1001.2101.3001.7020">urllib</a>更简洁也更强大。</p>
@@ -188,10 +193,5 @@
       <tags>
         <tag>python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/2024/11/20/categories/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
